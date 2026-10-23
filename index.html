@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Robson MT Imóveis — encontre casas e apartamentos em Sorocaba e região.">
+<title>Robson MT Imóveis | Sorocaba</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #102b3f;
+  --deep: #071722;
+  --gold: #c6a56b;
+  --cream: #f7f5f0;
+  --white: #ffffff;
+  --muted: #687782;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #1c2c37;
+  background: var(--cream);
+  line-height: 1.65;
+}
+.container { width: min(1120px, calc(100% - 40px)); margin: auto; }
+a { text-decoration: none; }
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 12px #102b3f0d;
+}
+.nav {
+  min-height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+}
+.brand-name {
+  color: var(--navy);
+  font: 800 1rem Manrope, sans-serif;
+}
+.brand-sub {
+  display: block;
+  font-size: .7rem;
+  letter-spacing: .13em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.nav-links { display: flex; align-items: center; gap: 25px; }
+.nav-links a { color: var(--navy); font-weight: 600; font-size: .9rem; }
+.button {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--deep) !important;
+  padding: 14px 22px;
+  font-weight: 800;
+  border-radius: 3px;
+  transition: .25s;
+  border: 1px solid var(--gold);
+}
+.button:hover { transform: translateY(-2px); background: #e4d2ad; }
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--navy);
+  font-size: 1.8rem;
+}
+.hero {
+  position: relative;
+  color: white;
+  background: var(--deep);
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #071722f2, #071722b8 58%, #07172238),
+    url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=85") center/cover;
+}
+.hero-content {
+  position: relative;
+  padding: 110px 0;
+  max-width: 760px;
+}
+.eyebrow {
+  color: #e4d2ad;
+  font-weight: 700;
+  font-size: .78rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+h1, h2, h3 { font-family: Manrope, sans-serif; line-height: 1.2; }
+.hero h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  letter-spacing: -.045em;
+  margin-bottom: 22px;
+}
+.hero h1 span { color: #e4d2ad; }
+.hero p { color: #d7e0e5; font-size: 1.08rem; max-width: 600px; margin-bottom: 30px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.button-outline {
+  background: transparent;
+  color: white !important;
+  border-color: #ffffff88;
+}
+.button-outline:hover { background: white; color: var(--navy) !important; }
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 32px;
+  color: #d7e0e5;
+  font-size: .87rem;
+}
+.trust span::before { content: "✓ "; color: #e4d2ad; font-weight: 800; }
+.stats { background: white; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); padding: 27px 0; }
+.stat { padding: 5px 24px; border-right: 1px solid #e7e8e6; }
+.stat:first-child { padding-left: 0; }
+.stat:last-child { border: 0; }
+.stat strong { display: block; color: var(--navy); font-family: Manrope, sans-serif; }
+.stat span { color: var(--muted); font-size: .85rem; }
+section { scroll-margin-top: 90px; }
+.section { padding: 90px 0; }
+.section-heading { max-width: 720px; text-align: center; margin: 0 auto 42px; }
+.kicker {
+  color: #9b7a43;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+.section-heading h2, .about-copy h2 {
+  color: var(--navy);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  letter-spacing: -.035em;
+  margin-bottom: 16px;
+}
+.section-heading p, .service-card p, .about-copy p, .step p { color: var(--muted); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.service-card {
+  background: white;
+  border: 1px solid #e7e8e6;
+  border-radius: 5px;
+  padding: 30px 26px;
+  transition: .25s;
+}
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 18px 35px #102b3f12; }
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  color: #a58147;
+  background: #f7f1e6;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+.service-card h3 { color: var(--navy); font-size: 1.15rem; margin-bottom: 12px; }
+.about { background: white; }
+.about-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 65px; }
+.about-photo { position: relative; padding: 0 18px 18px 0; }
+.about-photo::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 72%;
+  height: 72%;
+  border: 2px solid var(--gold);
+}
+.about-photo img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 510px;
+  object-fit: cover;
+}
+.about-copy h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+.about-copy p { margin-bottom: 15px; }
+.about-list { list-style: none; margin: 22px 0 28px; }
+.about-list li { margin-bottom: 9px; font-weight: 600; }
+.about-list li::before { content: "✓ "; color: #a58147; font-weight: 900; }
+.process { background: #f0eee8; }
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.step { padding: 25px; border-top: 2px solid var(--gold); background: #ffffffb8; }
+.step-number { font: 800 2rem Manrope, sans-serif; color: #c8b38d; margin-bottom: 12px; }
+.step h3 { color: var(--navy); font-size: 1.15rem; margin-bottom: 10px; }
+.cta-section { background: var(--navy); color: white; text-align: center; padding: 80px 0; }
+.cta-section .kicker { color: #e4d2ad; }
+.cta-section h2 { max-width: 760px; margin: 0 auto 18px; font-size: clamp(2rem, 4vw, 3.2rem); }
+.cta-section p { color: #d7e0e5; max-width: 620px; margin: 0 auto 28px; }
+footer { background: var(--deep); color: #b7c2c9; padding: 28px 0; font-size: .85rem; }
+.footer-inner { display: flex; justify-content: space-between; gap: 15px; }
+footer strong { color: white; }
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 20;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: #1eaa65;
+  font-size: 1.7rem;
+  box-shadow: 0 10px 28px #0003;
+}
+@media (max-width: 800px) {
+  .menu-toggle { display: block; cursor: pointer; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 82px;
+    left: 0;
+    right: 0;
+    padding: 22px;
+    background: white;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links .button { text-align: center; }
+  .hero-content { padding: 78px 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 42px; }
+  .about-photo { max-width: 500px; margin: auto; width: 100%; }
+  .about-photo img { height: 420px; }
+  .services-grid, .process-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; gap: 14px; }
+  .stat, .stat:first-child { border-right: 0; border-bottom: 1px solid #e7e8e6; padding: 0 0 13px; }
+  .stat:last-child { border-bottom: 0; }
+  .section { padding: 65px 0; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+@media (max-width: 480px) {
+  .container { width: calc(100% - 30px); }
+  .hero h1 { font-size: 2.45rem; }
+  .hero-actions .button { width: 100%; text-align: center; }
+  .trust { flex-direction: column; gap: 9px; }
+  .about-photo img { height: 350px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#inicio">
+      <span class="brand-mark">MT</span>
+      <span>
+        <span class="brand-name">ROBSON MT IMÓVEIS</span>
+        <span class="brand-sub">Sorocaba e região</span>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#servicos">Imóveis e serviços</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#etapas">Como funciona</a>
+      <a class="button" href="https://wa.me/5515998883175?text=Olá!%20Quero%20conversar%20sobre%20imóveis%20em%20Sorocaba." target="_blank" rel="noopener noreferrer">Fale comigo ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Robson MT Imóveis · Sorocaba</div>
+        <h1>O próximo capítulo da sua vida começa com o <span>imóvel certo.</span></h1>
+        <p>Encontre casas e apartamentos em Sorocaba e região com atendimento personalizado, transparência e acompanhamento em cada etapa da negociação.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://wa.me/5515998883175?text=Olá!%20Quero%20encontrar%20um%20imóvel%20em%20Sorocaba." target="_blank" rel="noopener noreferrer">Quero encontrar um imóvel ↗</a>
+          <a class="button button-outline" href="#servicos">Conheça meus serviços</a>
+        </div>
+        <div class="trust">
+          <span>Casas e apartamentos</span>
+          <span>Compra e venda</span>
+          <span>Atendimento personalizado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="container stats-grid">
+      <div class="stat"><strong>Encontre seu novo lar</strong><span>Opções alinhadas aos seus objetivos</span></div>
+      <div class="stat"><strong>Venda com planejamento</strong><span>Orientação ao longo da negociação</span></div>
+      <div class="stat"><strong>Sorocaba e região</strong><span>Atendimento próximo e consultivo</span></div>
+    </div>
+  </div>
+
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section-heading">
+        <div class="kicker">Como posso ajudar</div>
+        <h2>Um bom negócio começa com boas escolhas.</h2>
+        <p>Seja para comprar sua primeira casa, mudar de apartamento ou vender seu imóvel, vamos conversar sobre o melhor caminho para você.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">⌂</div>
+          <h3>Compra de casas e apartamentos</h3>
+          <p>Encontre opções que combinem com seu estilo de vida, localização desejada e orçamento.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">↗</div>
+          <h3>Venda de imóveis</h3>
+          <p>Planejamento e orientação para apresentar seu imóvel e acompanhar as etapas da negociação.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">⌕</div>
+          <h3>Consultoria imobiliária</h3>
+          <p>Converse comigo para esclarecer dúvidas, organizar suas prioridades e definir os próximos passos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="sobre">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=85" alt="Imagem ilustrativa de um profissional" loading="lazy">
+      </div>
+      <div class="about-copy">
+        <div class="kicker">Muito prazer</div>
+        <h2>Seu parceiro na hora de encontrar o lugar certo.</h2>
+        <p>Olá! Eu sou <strong>Robson, da MT Imóveis</strong>. Sei que comprar ou vender um imóvel é uma decisão importante. Por isso, meu objetivo é oferecer atendimento próximo, comunicação clara e orientação em cada etapa.</p>
+        <p>Vamos entender o que você procura, conversar sobre as possibilidades e buscar uma solução que faça sentido para seus planos em Sorocaba e região.</p>
+        <ul class="about-list">
+          <li>Atendimento personalizado</li>
+          <li>Casas e apartamentos</li>
+          <li>Compra e venda de imóveis</li>
+        </ul>
+        <a class="button" href="https://wa.me/5515998883175?text=Olá%20Robson!%20Quero%20conversar%20sobre%20imóveis." target="_blank" rel="noopener noreferrer">Vamos conversar ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process" id="etapas">
+    <div class="container">
+      <div class="section-heading">
+        <div class="kicker">Simples e transparente</div>
+        <h2>Da primeira conversa à próxima conquista.</h2>
+        <p>Um processo organizado para você saber o que esperar e tomar suas decisões com mais clareza.</p>
+      </div>
+      <div class="process-grid">
+        <article class="step"><div class="step-number">01</div><h3>Entendemos seus planos</h3><p>Conversamos sobre seus objetivos, preferências, região e orçamento.</p></article>
+        <article class="step"><div class="step-number">02</div><h3>Buscamos possibilidades</h3><p>Organizamos as opções de acordo com o que você precisa e procura.</p></article>
+        <article class="step"><div class="step-number">03</div><h3>Acompanhamos você</h3><p>Orientação durante as etapas da negociação e do processo imobiliário.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="kicker">Vamos dar o próximo passo?</div>
+      <h2>Seu próximo imóvel pode estar mais perto do que você imagina.</h2>
+      <p>Conte o que você procura. Vamos conversar sobre casas e apartamentos em Sorocaba e região.</p>
+      <a class="button" href="https://wa.me/5515998883175?text=Olá!%20Quero%20conversar%20sobre%20imóveis%20em%20Sorocaba." target="_blank" rel="noopener noreferrer">Fale comigo pelo WhatsApp ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <p><strong>ROBSON MT IMÓVEIS</strong> · Sorocaba e região</p>
+    <p>© <span id="year"></span> Robson MT Imóveis. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/5515998883175?text=Olá!%20Gostaria%20de%20informações%20sobre%20imóveis." target="_blank" rel="noopener noreferrer" aria-label="Fale pelo WhatsApp">✆</a>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.textContent = open ? '×' : '☰';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '☰';
+  });
+});
+</script>
+</body>
+</html>
